@@ -29,7 +29,16 @@ export default function ReactComplexTree() {
           --rct-item-height: 30px;
           --rct-arrow-size: 12px;
           --rct-arrow-container-size: 18px;
-          --rct-color-focustree-item-hover-bg: #f0e4e4;
+          --rct-color-focustree-item-hover-bg: #f7e6e6;
+
+          --rct-search-width: 120px;
+          --rct-search-height: 16px;
+          --rct-search-padding: 8px;
+          --rct-search-border: #b4b7bd;
+          --rct-search-border-bottom: #0366d6;
+          --rct-search-bg: #f8f9fa;
+          --rct-search-text: #000000;
+          --rct-search-text-offset: calc(var(--rct-search-padding) * 2 + 16px);
         }
       `}</style>
         <UncontrolledTreeEnvironment
@@ -39,7 +48,9 @@ export default function ReactComplexTree() {
         canDragAndDrop={true}
         canDropOnFolder={true}
         canReorderItems={true}
-            
+        canSearchByStartingTyping={true}
+        canSearch={true}        
+                
         onFocusItem={item => setFocusedItem(item.index)}
         onExpandItem={item => setExpandedItems([...expandedItems, item.index])}
         onCollapseItem={item =>
